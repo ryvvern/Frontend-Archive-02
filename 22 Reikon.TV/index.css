@@ -1,0 +1,197 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Manrope', sans-serif;
+    background-color: #f8f8f8;
+}
+
+/* =================
+    Site Layout 
+   ================= */
+
+body {
+    display: grid;
+    grid-template-columns: 1fr min(1200px, 100%) 1fr;
+    grid-template-areas:
+        ". header ." 
+        ". main ."
+        ". footer .";
+    gap: 2em 0;
+    min-height: 100vh;
+}
+
+.site-header {
+    grid-area: header;
+    padding: 2em 1em 1em;
+    text-align: center;
+}
+
+main {
+    grid-area: main;
+    padding: 0 1em;
+}
+
+footer {
+    grid-area: footer;
+    padding: 2em 1em;
+    text-align: center;
+    margin-top: auto;
+}
+ 
+/* =================
+    Main Element Layout 
+   ================= */
+   
+main {
+    display: grid;
+    gap: 1.5em;
+    grid-template-columns: 1fr;
+}
+
+/* Mobile Layout */
+@media(min-width: 500px) {
+    main {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: 
+            "tech tech"
+            "envi nasa"
+            "phys heal";
+    }
+    
+    .technology {
+        grid-area: tech;
+    }
+        
+    .environment {
+        grid-area: envi;
+    }
+
+    .nasa {
+        grid-area: nasa;
+    }
+
+    .physics { 
+        grid-area: phys;
+    }
+
+    .health {
+        grid-area: heal;
+    }
+}
+   
+/* Desktop layout */
+@media(min-width: 900px){
+    main {
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-areas: 
+            "tech tech envi nasa"
+            "phys heal heal nasa";
+        gap: 2em;
+    }
+}
+
+/* =================
+    Article Card 
+   ================= */
+   
+a {
+    text-decoration: none;
+    display: block;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+a:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+a:focus {
+    outline: 3px solid #5a5a5a;
+    box-shadow: 0 0 0 3px rgba(135,18,113,0.5), 0 8px 25px rgba(0,0,0,0.1); 
+    transition: outline 0.2s ease, box-shadow 0.2s ease;
+}
+
+article {
+    border-radius: 12px;
+    background-color: #ffffff;
+    height: 100%;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    border: 1px solid #e8e8e8;
+}
+
+.article-header {
+    box-sizing: border-box;
+    padding: 1.5em;
+    width: 100%;
+}
+
+/* =================
+    Typography 
+   ================= */
+
+h1 {
+    color: #0F0F0F; 
+    letter-spacing: 0.04em;
+    font-family: "Source Code Pro", sans-serif;
+    margin: 0;
+    padding: 0;
+    font-size: 2.5rem;
+    font-weight: 600;
+}
+
+h2 {
+    font-size: 0.75rem;
+    color: #5D0E50;
+    margin: 0 0 0.5em 0;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+h3 {
+    font-size: 1.1rem;
+    margin: 0;
+    letter-spacing: 0.02em;
+    color: #111111;
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+p {
+    margin: 0;
+    font-size: 0.85rem;
+    color: #7c7c7c;
+}
+
+/* =================
+    Images 
+   ================= */
+
+img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+}
+
+/* Special sizing for featured article */
+.technology img {
+    height: 180px;
+    object-position: center top;
+}
+
+.health img {
+    height: 220px;
+    object-position: center top;
+}
+
+@media(min-width: 900px) {
+    .technology img {
+        height: 200px;
+    }
+    
+    .nasa img {
+        height: 420px;
+    }
+}
