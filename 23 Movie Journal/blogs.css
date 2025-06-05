@@ -1,0 +1,193 @@
+/* Base layout */
+html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+main {
+    background-color: #FAFAFA;
+    padding: 2rem 1rem; /* Mobile padding (matches header from index.css) */
+    flex: 1;
+    width: 100%;
+    margin: 0 auto; /* Center the main content block */
+    box-sizing: border-box; /* Ensure padding is included in width */
+}
+
+.intro-text, .intro-text-two {
+    max-width: 100%;
+    margin: 0;
+    padding: 1.5rem 0;
+}
+
+.intro-text-two {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.intro-text-two h4 {
+    margin: 1.5rem 0 0.5rem 0;
+}
+
+.intro-text-two p {
+    margin: 0;
+    line-height: 1.6;
+}
+
+.blog-title {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.date {
+    margin-bottom: 0.5rem;
+}
+
+.hero-intro-container {
+    background-image: url('../images/display.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 300px;
+    margin: 1rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-end;
+    padding: 2rem;
+    color: #fff;
+    border-radius: 8px;
+}
+
+.recents {
+    text-align: center;
+    margin: 2rem 0;
+    font-size: 1.2rem;
+}
+
+/* Blog Grid */
+.hero-blogs-container {
+    display: grid;
+    gap: 2rem;
+    padding: 0; /* Padding is controlled by main */
+    margin-top: 2rem; /* Add space above the grid */
+}
+
+.blog {
+    margin-bottom: 1rem; /* Space between blogs in mobile list */
+}
+
+.blog img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.blog-text {
+    padding: 1rem 0; /* Keep top/bottom padding */
+}
+
+/* Tablet Styles */
+@media (min-width: 768px) {
+    main {
+        padding: 2rem 2rem;
+        margin: 0 auto;
+    }
+
+    .intro-text, .intro-text-two {
+        padding: 2rem 0;
+    }
+
+    .intro-text-two {
+        gap: 1.5rem;
+    }
+
+    .intro-text-two h4 {
+        margin: 2rem 0 0.75rem 0;
+        font-size: 1.5rem;
+    }
+
+    .hero-intro-container {
+        height: 400px;
+        margin: 2rem 0;
+        background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('../images/display.jpg');
+    }
+
+    .blog-title {
+        font-size: 2rem; /* Larger title for tablet */
+    }
+
+    .hero-blogs-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+        padding: 0;
+    }
+
+    .blog {
+        margin-bottom: 0;
+        transition: transform 0.3s ease; /* Add hover effect */
+    }
+
+    .blog:hover {
+        transform: translateY(-5px);
+    }
+
+    .blog-text {
+        padding: 1rem 0;
+    }
+}
+
+/* Desktop Styles */
+@media (min-width: 1024px) {
+    main {
+        padding: 2rem 3rem;
+    }
+
+    .intro-text, .intro-text-two {
+        padding: 2.5rem 2rem;
+    }
+
+    .intro-text-two {
+        gap: 2rem;
+    }
+
+    .intro-text-two h4 {
+        margin: 2.5rem 0 1rem 0;
+        font-size: 1.75rem;
+    }
+
+    .hero-intro-container {
+        height: 500px;
+        margin: 2rem 0;
+        background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('../images/display.jpg');
+    }
+
+    .blog-title {
+        font-size: 2.5rem; /* Larger title for desktop */
+    }
+
+    .hero-blogs-container {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2.5rem;
+        padding: 0;
+    }
+
+    .blog-text {
+        padding: 1.5rem 0;
+    }
+
+    .recents {
+        font-size: 1.5rem;
+        margin: 3rem 0;
+    }
+}
