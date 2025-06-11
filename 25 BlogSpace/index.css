@@ -1,0 +1,128 @@
+/* Reset default spacing */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Karla', sans-serif;
+    background-color: #f9f9f9;
+    color: #000;
+    line-height: 1.6;
+}
+
+.space {
+    color: #0081FB;
+}
+
+/* Navigation bar */
+nav {
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    padding: 10px 20px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+/* Form styling */
+form {
+    margin-top: 1rem;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+form label {
+    font-weight: 600;
+    margin-bottom: 4px;
+    font-size: 1.5rem;
+}
+
+input#post-title,
+textarea#post-body {
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    width: 100%;
+}
+
+textarea#post-body {
+    resize: vertical;
+    min-height: 100px;
+}
+
+button {
+    padding: 12px;
+    font-size: 16px;
+    background-color: #000000;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-weight: bold;
+}
+
+button:hover {
+    color: #000;
+    background-color: #0081FB;
+    cursor: pointer;
+}
+
+/* Blog list styling */
+#blog-list {
+    padding: 20px;
+    width: 90%;
+    max-width: 600px;
+    margin: 20px auto;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+#blog-list h3 {
+    margin-bottom: 10px;
+    font-size: 18px;
+    color: #111;
+    text-align: left;
+}
+
+#blog-list p {
+    margin-bottom: 15px;
+    color: #555;
+    text-align: left;
+    line-height: 1.6;
+}
+
+hr {
+    border: none;
+    border-top: 1px solid #eee;
+    margin: 0;
+}
+
+#title {
+    color: #000000;
+    text-align: center;
+    font-size: 6rem;
+    margin: 0 auto;
+    margin-top: 1rem;
+}
+
